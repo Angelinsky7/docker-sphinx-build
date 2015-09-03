@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd ${SPHINX_DOC_ROOT:=/sphinx}
+
+if [[ -r requirements.txt ]] && [[ ! -z requirements.txt ]]; then
+  pip install -r requirements.txt
+fi
+
+make ${SPHINX_MAKE:=html}

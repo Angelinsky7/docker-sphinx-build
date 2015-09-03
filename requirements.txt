@@ -1,0 +1,8 @@
+sphinxjp.themes.basicstrap
+sphinxjp.themes.sphinxjp
+sphinx-rtd-theme
+sphinxjp.themes.dotted
+sphinxjp.themes.revealjs
+sphinx-better-theme
+sphinx-readable-theme
+sphinxtheme.readability
