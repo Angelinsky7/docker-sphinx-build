@@ -1,7 +1,0 @@
-sphinx:
-  build: .
-  volumes:
-    - .:/sphinx
-  environment:
-    - SPHINX_DOC_ROOT=/sphinx
-    - SPHINX_MAKE=html

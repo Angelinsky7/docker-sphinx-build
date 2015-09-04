@@ -1,0 +1,8 @@
+sphinx:
+  image: sonodar/sphinx-build
+  volumes:
+    - .:/sphinx
+  environment:
+    - SPHINX_DOC_ROOT=/sphinx
+    - SPHINX_BUILDER=latexpdfja
+    - REQUIREMENTS_FILE=/sphinx/requirements.txt

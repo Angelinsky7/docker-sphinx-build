@@ -2,8 +2,10 @@
 
 cd ${SPHINX_DOC_ROOT:=/sphinx}
 
-if [[ -r requirements.txt ]] && [[ ! -z requirements.txt ]]; then
-  pip install -r requirements.txt
+if test -n ${REQUIREMENTS_FILE} \
+     -a -r ${REQUIREMENTS_FILE} \
+     -a -s ${REQUIREMENTS_FILE}; then
+  pip install -r ${REQUIREMENTS_FILE}
 fi
 
-make ${SPHINX_MAKE:=html}
+make ${SPHINX_BUILDER:=html}
