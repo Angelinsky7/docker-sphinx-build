@@ -3,20 +3,38 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Sphinx Example Document's documentation!
-===================================================
+Sphinx 日本語サンプル
+=====================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
+================
+PlantUMLサンプル
+================
 
+ユースケース図
+--------------
 
-Indices and tables
-==================
+.. uml::
+   
+  actor 消費者
+  actor メーカー
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+  メーカー --> (製品) : 販売
+  消費者 --> (製品) : 購入
 
+オブジェクト図
+--------------
+
+.. uml::
+
+  object プロジェクト
+  object グループ
+  object メンバー
+
+  プロジェクト o- グループ
+  グループ o- メンバー
+  プロジェクト o- メンバー
