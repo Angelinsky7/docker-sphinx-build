@@ -2,10 +2,8 @@
 
 cd ${SPHINX_DOC_ROOT:=/sphinx}
 
-if test -n ${REQUIREMENTS_FILE} \
-     -a -r ${REQUIREMENTS_FILE} \
-     -a -s ${REQUIREMENTS_FILE}; then
+if [[ -e ${REQUIREMENTS_FILE} ]]; then
   pip install -r ${REQUIREMENTS_FILE}
 fi
 
-make ${SPHINX_BUILDER:=html}
+sphinx-build -b ${SPHINX_BUILDER:=html} . build/${SPHINX_BUILDER:=html}
