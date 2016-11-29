@@ -10,7 +10,8 @@ RUN apt-get install -y curl && \
 RUN apt-get update && \
     apt-get install -y openjdk-8-jdk graphviz python-pip python-dev build-essential zlib1g-dev \
                        fonts-ipafont-gothic fonts-ipafont-mincho fonts-takao-pgothic fonts-takao-gothic \
-                       fonts-takao-mincho texlive texlive-lang-cjk && \
+                       fonts-takao-mincho texlive texlive-lang-cjk libjpeg8 libjpeg8-dev \
+                       libfreetype6 libfreetype6-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install Sphinx, sphinxcontrib-*
