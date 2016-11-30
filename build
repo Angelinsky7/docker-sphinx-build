@@ -1,9 +1,13 @@
 #!/bin/bash
 
-cd ${SPHINX_DOC_ROOT:=/sphinx}
+SPHINX_DOC_ROOT=${SPHINX_DOC_ROOT:=/sphinx}
+SPHINX_BUILDER=${SPHINX_BUILDER:=html}
+SPHINX_OUT_DIR=${SPHINX_OUT_DIR:=_build}
+
+cd ${SPHINX_DOC_ROOT}
 
 if [[ -e ${REQUIREMENTS_FILE} ]]; then
   pip install -r ${REQUIREMENTS_FILE}
 fi
 
-sphinx-build -b ${SPHINX_BUILDER:=html} . build/${SPHINX_BUILDER:=html}
+sphinx-build -b ${SPHINX_BUILDER} . ${SPHINX_OUT_DIR}
