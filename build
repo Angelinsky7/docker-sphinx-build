@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 SPHINX_DOC_ROOT=${SPHINX_DOC_ROOT:=/sphinx}
 SPHINX_BUILDER=${SPHINX_BUILDER:=html}
@@ -11,3 +11,8 @@ if [[ -e ${REQUIREMENTS_FILE} ]]; then
 fi
 
 sphinx-build -b ${SPHINX_BUILDER} . ${SPHINX_OUT_DIR}
+if [[ ${SPHINX_BUILDER} == "pdf" ]]; then
+  cd ${SPHINX_OUT_DIR} && make all-pdf
+elif [[ ${SPHINX_BUILDER} == "pdfja" ]]; then
+  cd ${SPHINX_OUT_DIR} && make all-pdf-ja
+fi
